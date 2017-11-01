@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoryToCourse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="courseToCategory" inverseEntity="Course" syncable="YES"/>
+        <relationship name="categoryToImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="imageToCategory" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="aboutme" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="children" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coursename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="education" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iam" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intrests" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personality" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pets" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="professionType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="religion" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courseToCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="categoryToCourse" inverseEntity="Category" syncable="YES"/>
+        <relationship name="courseToImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="imageToCourse" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="imageToCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="categoryToImage" inverseEntity="Category" syncable="YES"/>
+        <relationship name="imageToCourse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="courseToImage" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Course" positionX="-63" positionY="-18" width="128" height="270"/>
+        <element name="Image" positionX="-54" positionY="90" width="128" height="90"/>
+        <element name="Category" positionX="-36" positionY="99" width="128" height="90"/>
+    </elements>
+</model>
